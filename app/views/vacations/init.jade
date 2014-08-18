@@ -1,0 +1,24 @@
+extends ../shared/template
+block content
+  h2 Vacation Page
+
+  form(role='form', method='post', action='/vacations')
+    input#lat(type='hidden', name='lat')
+    input#lng(type='hidden', name='lng')
+    .form-group
+      label(for='inputName') Name
+        .controls
+            input#name(type='text' name='name', placeholder='Russia')
+    .form-group
+      label(for='inputForm') Start Date
+        .controls
+            input#from(type='date' name='date')
+    .form-group
+      label(for='inputTo') End Date
+        .controls
+            input#to(type='date')
+    button.btn Save
+
+
+block scripts
+  script(src='/js/user/new-vacation.js')

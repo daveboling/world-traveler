@@ -1,0 +1,18 @@
+nav.navbar.navbar-inverse(role='navigation')
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle(type='button', data-target='#navbarCollapse', data-toggle='collapse')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+
+    .collapse.navbar-collapse#navbarCollapse
+      ul.nav.navbar-nav.navbar-right
+        li: a(href='/') Home
+        li: a(href='/about') About
+        li: a(href='/faq') FAQ
+        li: a(href='/contact') Contact
+        li: a(href='/vacations/new') New Vacation 
+      .navbar-brand.navbar-left World Traveler
+block scripts
