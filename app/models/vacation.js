@@ -19,8 +19,6 @@ Object.defineProperty(Vacation, 'collection', {
   get: function(){return global.mongodb.collection('vacations');}
 });
 
-
-
 Vacation.all = function(cb){
   Vacation.collection.find().toArray(cb);
 };
@@ -73,9 +71,7 @@ Vacation.prototype.uploadPhotos = function(files, cb){
   });
 
   Vacation.collection.save(self, cb);
-
 };
-
 
 
 module.exports = Vacation;

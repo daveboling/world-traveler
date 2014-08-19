@@ -26,7 +26,6 @@ exports.spot = function(req, res){
   Vacation.findById(req.params.id, function(spot){
     res.render('vacations/spot',{vacation: spot, moment: moment});
   });
-
 };
 
 exports.downloadPhoto = function(req, res){
