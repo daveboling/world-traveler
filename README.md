@@ -1,8 +1,8 @@
-## name of project
+## World Traveler
 ### Code Badges
 
 ### About
-A world traveler program written in Node using Bootstrap, LESS, and Google Maps API
+A world traveler program written in Node using Bootstrap, LESS, and Google Maps API. 
 ### Models
 
 ### Features
