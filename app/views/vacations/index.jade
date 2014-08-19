@@ -1,28 +1,28 @@
 extends ../shared/template
 block content
-	h2 Vacations 
-	#map
+  h2 Vacations 
+  #map
 
-	#vacations
-		.row.header
-			.col-xs-2 Location
-			.col-xs-2 Start Date
-			.col-xs-2 End Date
-			.col-xs-2 Latitude
-			.col-xs-2 Longitude
-			.col-xs-2 Photos
-		each vacation in vacations
-			.row.vacation
-				.col-xs-2= vacation.name
-				.col-xs-2= moment(vacation.start).format('MM/DD/YYYY')
-				.col-xs-2= moment(vacation.end).format('MM/DD/YYYY')
-				.col-xs-2= vacation.lat
-				.col-xs-2= vacation.lng
-				.col-xs-2
-					-for(var i = 0; i < vacation.photos.length ; i++)
-						a(href="#{vacation.photos[i]}")= i
+  #vacations
+    .row.header
+      .col-xs-2 Location
+      .col-xs-2 Start Date
+      .col-xs-2 End Date
+      .col-xs-2 Latitude
+      .col-xs-2 Longitude
+      .col-xs-2 Photos
+    each vacation in vacations
+      .row.vacation(data-name=vacation.name, data-lat=vacation.lat, data-lng=vacation.lng)
+        .col-xs-2: a(href='/vacations/#{vacation._id}')= vacation.name
+        .col-xs-2= moment(vacation.start).format('MM/DD/YYYY')
+        .col-xs-2= moment(vacation.end).format('MM/DD/YYYY')
+        .col-xs-2= vacation.lat
+        .col-xs-2= vacation.lng
+        .col-xs-2
+          each photo in vacation.photos 
+            a(href='#{photo}'): img.thumbnail(src="#{photo}")
 
 
 
 block scripts
-	script(src='/js/user/home.js')
+  script(src='/js/user/vacations.js')

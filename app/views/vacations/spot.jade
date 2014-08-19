@@ -1,0 +1,30 @@
+extends ../shared/template
+block content
+  .row
+    .col-xs-6
+      #map
+    .col-xs-6.location
+      .row
+        .col-xs-12#name(data-name=vacation.name) Location: #{vacation.name}
+      .row
+        .col-xs-6 From #{moment(vacation.start).format('MM/DD/YYYY')}
+        .col-xs-6 To #{moment(vacation.end).format('MM/DD/YYYY')}
+      .row
+        .col-xs-6#lat(data-lat=vacation.lat) Latitude: #{vacation.lat}
+        .col-xs-6#lng(data-lng=vacation.lng) Longitude: #{vacation.lng}
+      .row.addPhoto
+        .col-xs-12
+          form(method='post' action='/vacations/#{vacation._id}/photos/download')
+            .form-group: label Photo URL
+            input.form-control#url(type='text' name='url')
+            button.btn Add Photo
+      .row.uploadPhoto
+        .col-xs-12
+          form(method='post' action='/vacations/#{vacation._id}/photos/upload', enctype='multipart/form-data')
+            .form-group: label Upload Photo 
+            input.form-control#path(type='file' name='photos', multiple=true)
+            button.btn Add Photo
+
+
+block scripts
+  script(src='/js/user/spot.js')
