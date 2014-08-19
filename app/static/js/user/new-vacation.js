@@ -34,10 +34,7 @@
       $('#name').val(name);
       $('#lat').val(lat);
       $('#lng').val(lng);
-    
       $('form').submit();
-
-
     });
   }
 

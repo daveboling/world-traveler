@@ -1,0 +1,37 @@
+{
+   "_id":{
+      "$oid":"000000000000000000000001"
+   },
+   "name":"San Andreas",
+   "start":{
+      "$date":1408407517372
+   },
+   "end":{
+      "$date":1408407999999
+   },
+   "lat":20,
+   "lng":20,
+   "photos":[
+      "theft.jpg",
+      "car.jpg"
+   ]
+}
+
+{
+   "_id":{
+      "$oid":"000000000000000000000002"
+   },
+   "name":"Tin-buck-too",
+   "start":{
+      "$date":1508407517372
+   },
+   "end":{
+      "$date":1408457999999
+   },
+   "lat":30,
+   "lng":-30,
+   "photos":[
+      "tumbleweed.jpg",
+      "desert.jpg"
+   ]
+}

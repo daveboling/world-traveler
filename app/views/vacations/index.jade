@@ -1,0 +1,28 @@
+extends ../shared/template
+block content
+	h2 Vacations 
+	#map
+
+	#vacations
+		.row.header
+			.col-xs-2 Location
+			.col-xs-2 Start Date
+			.col-xs-2 End Date
+			.col-xs-2 Latitude
+			.col-xs-2 Longitude
+			.col-xs-2 Photos
+		each vacation in vacations
+			.row.vacation
+				.col-xs-2= vacation.name
+				.col-xs-2= moment(vacation.start).format('MM/DD/YYYY')
+				.col-xs-2= moment(vacation.end).format('MM/DD/YYYY')
+				.col-xs-2= vacation.lat
+				.col-xs-2= vacation.lng
+				.col-xs-2
+					-for(var i = 0; i < vacation.photos.length ; i++)
+						a(href="#{vacation.photos[i]}")= i
+
+
+
+block scripts
+	script(src='/js/user/home.js')
