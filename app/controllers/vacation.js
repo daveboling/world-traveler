@@ -11,6 +11,7 @@ exports.init = function(req, res){
 
 exports.create = function(req, res){
   var v = new Vacation(req.body);
+  console.log(req.body);
   Vacation.create(v, function(){
     res.redirect('/vacations');
   });
